@@ -1,0 +1,128 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../images/image1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    margin: 0; /* Remove default margin */
+}
+
+/* Container */
+.form-box {
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+    .form-box h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #3c00a0;
+    }
+
+.input-field {
+    background: #eaeaea;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 4px; /* Rounded corners for the input field */
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+    font-size: 16px; /* Adjust font size for better readability */
+    color: #333; /* Darker text for better contrast */
+    border-radius: 4px; /* Matching rounded corners */
+}
+
+.input-field i {
+    margin-left: 15px;
+    color: #999;
+}
+
+/* Button Field */
+.btn-field {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.login-button {
+    width: 100%;
+    background: #3c00a0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 4px; /* Rounded corners for the button */
+    font-size: 16px; /* Larger font for the button text */
+}
+
+    .login-button:hover {
+        background: #5d00c0;
+    }
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .form-box {
+        padding: 40px 30px 50px; /* Adjust padding on smaller screens */
+        width: 80%; /* Slightly wider form on smaller screens */
+    }
+
+        .form-box h1 {
+            font-size: 26px; /* Adjust font size for smaller screens */
+        }
+
+    .input-field input {
+        padding: 15px 12px; /* Adjust padding for input fields */
+        font-size: 14px; /* Smaller font size for inputs */
+    }
+
+    .login-button {
+        font-size: 14px; /* Smaller button font on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-box {
+        padding: 30px 20px 40px; /* More compact padding */
+        width: 90%; /* Form almost full width on very small screens */
+    }
+
+        .form-box h1 {
+            font-size: 24px; /* Reduce font size further on tiny screens */
+        }
+
+    .input-field input {
+        padding: 12px 10px; /* Further reduce padding for inputs */
+        font-size: 14px; /* Keep font size small */
+    }
+
+    .login-button {
+        font-size: 13px; /* Smaller button font on very small screens */
+    }
+}

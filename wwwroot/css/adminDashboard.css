@@ -1,0 +1,149 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.banner {
+    width: 100%; /* Full width */
+}
+
+nav {
+    width: 100%; /* Make the navbar full width */
+    padding: 10px 8%; /* Adjust padding */
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Spread items between the left and right */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add light shadow */
+    background: #fff;
+    position: static;
+    top: 0;
+    z-index: 10;
+}
+
+.flex-div {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left h1 {
+    margin-right: 25px;
+    color: #4A00E0; /* Title color */
+}
+
+.nav-middle {
+    flex-grow: 1; /* Let the middle part take up available space */
+    display: flex;
+    align-items: center;
+    position: relative; /* To position the search icon */
+}
+
+.search-bar {
+    padding: 8px 12px 8px 35px; /* Add space for the search icon */
+    border-radius: 20px;
+    width: 100%;
+    position: relative; /* For icon positioning */
+    border: none; /* Remove the border */
+    outline: none; /* Remove the outline when focused */
+    background-color: #d3d3d3; /* Optional: set a background color */
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* Position the search icon inside the search bar */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%);
+    color: #aaa; /* Icon color */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Reduced margin to move closer to the search bar */
+}
+
+.notification-icon, .profile-icon {
+    margin-left: 10px; /* Space between icons */
+    cursor: pointer;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    max-width: 200px;
+    max-height: 300px; /* Limit the height of the dropdown */
+    border-radius: 5px;
+    z-index: 1;
+    overflow-y: auto; /* Make the dropdown scrollable if it exceeds the max height */
+    top: 100%; /* Position below the nav bar */
+    right: 0; /* Align the dropdown to the right edge */
+}
+
+    .dropdown-content p,
+    .dropdown-content a {
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.show {
+    display: block;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #d3d3d3;
+    height: 100vh;
+    padding: 15px;
+    position: fixed;
+}
+
+    .sidebar h2 {
+        color: #4A00E0;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .sidebar ul li {
+            padding: 10px 15px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+            .sidebar ul li:hover {
+                background-color: #949494;
+            }
+
+.content {
+    text-align: center; /* Center the text */
+    margin-left: 270px; /* Space for the sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+.welcome-section img {
+    width: 30%; /* Set image width to 30% */
+    position: absolute; /* Allow centering */
+    top: 60%; /* Move down by half of its height */
+    left: 50%; /* Move right by half of its width */
+    transform: translate(-50%, -50%); /* Center the image */
+    z-index: -1; /* Send the image behind other content */
+}

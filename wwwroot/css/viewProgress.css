@@ -1,0 +1,130 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.banner {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    width: 80%;
+    max-width: 1000px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+h1 {
+    color: #4A00E0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #4A00E0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4A00E0;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.center-button {
+    background-color: #4A00E0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .center-button:hover {
+        background-color: #7B00FF;
+    }
+
+    .center-button:focus {
+        outline: none;
+    }
+
+/* Approve and Reject button styles */
+.approve-button,
+.reject-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px; /* Spacing between buttons */
+}
+
+.approve-button {
+    background-color: #28a745; /* Green for approval */
+    color: white;
+}
+
+    .approve-button:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
+.reject-button {
+    background-color: #dc3545; /* Red for rejection */
+    color: white;
+}
+
+    .reject-button:hover {
+        background-color: #c82333; /* Darker red on hover */
+    }

@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<empoweraidgroup.Models.Employee> 
+
+<!-- This should be the very first line -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employees</title>
+    <link rel="stylesheet" href="~/css/viewEmployees.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="banner">
+    <div class="content">
+        <h1>Employees Information</h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Marital Status</th>
+                <th>Phone</th>
+                <th>Hire Date</th> <!-- New column for hire date -->
+                <th>Position</th>   <!-- New column for position -->
+            </tr>
+            </thead>
+            <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>@employee.Id</td>
+                        <td>@employee.Name</td>
+                        <td>@employee.Email</td>
+                        <td>@employee.Age</td>
+                        <td>@employee.Gender</td>
+                        <td>@employee.MaritalStatus</td>
+                        <td>@employee.Phone</td>
+                        <td>@employee.HireDate.ToString("yyyy-MM-dd")</td> <!-- Format hire date -->
+                        <td>@employee.Position</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="9">Click the load employees button to see the infos.</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+            <form asp-action="ViewEmployees" method="get">
+                <button type="submit" class="btn-field">Load Employees</button>
+            </form>
+            <form asp-action="AdminDashboard.cshtml" method="get">
+                <button type="submit" class="btn-field">Return to Dashboard</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="~/css/adminDashboard.css">
+    <script src="https://kit.fontawesome.com/3eecc2cac4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="banner">
+        <nav class="flex-div">
+            <div class="nav-left">
+                <h1>EmpowerAid Group</h1>
+            </div>
+            <div class="nav-middle">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <i class="fas fa-search search-icon"></i> <!-- Search Icon -->
+            </div>
+            <div class="nav-right">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <!-- New Profile Section with Logout Icon -->
+                <div class="profile-icon">
+                    <i class="fa fa-user"></i> @Context.Session.GetString("loggedUser") <!-- Display the username directly -->
+                    <a href="@Url.Action("Index", "Home")" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar">
+            <ul>
+                
+                <li><a href="@Url.Action("Index", "AddEmployee")"><i class="fa fa-user-plus"></i> Add Employees</a></li>
+                <li><a href="@Url.Action("ViewEmployees", "ViewEmployee")"><i class="fa fa-users"></i> View Employees</a></li>
+                <li><a href="@Url.Action("AssignTasks", "AssignTask")"><i class="fa fa-tasks"></i> Assign Tasks</a></li>
+                <li><a href="@Url.Action("ManageEmployee", "Admin")"><i class="fa fa-user-times"></i> Manage Employee</a></li>
+
+                <li><a href="@Url.Action("ViewProgress", "Admin")"><i class="fa fa-chart-line"></i> View Progress</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Welcome, @Context.Session.GetString("loggedUser")!</h2> <!-- Display the username directly -->
+            <p>Here are your administrative tasks for today.</p>
+        </div>
+
+        <div class="welcome-section">
+            <img src="~/images/svg1.svg">
+        </div>
+    </div>
+
+</body>
+</html>

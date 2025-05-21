@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+
+@model empoweraidgroup.Models.Employee
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile</title>
+    <link rel="stylesheet" href="~/css/employeeProfile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Employee Profile</h1>
+
+        <!-- Profile Information Section -->
+        @if (Model != null)
+        {
+            <div class="profile-info">
+                <div class="profile-icon">👤</div>
+                <p><strong>Username:</strong> @Model.Name</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Age:</strong> @Model.Age</p>
+                <p><strong>Marital Status:</strong> @Model.MaritalStatus</p>
+                <p><strong>Phone:</strong> @Model.Phone</p>
+                <p><strong>Hire Date:</strong> @Model.HireDate.ToShortDateString()</p>
+                <p><strong>Position:</strong> @Model.Position</p>
+            </div>
+        }
+        else
+        {
+            <p>@ViewBag.Message</p>
+        }
+
+        <!-- Buttons Section -->
+        <div class="button-container">
+            <form asp-action="ShowProfile" asp-controller="EmployeeProfile" method="get">
+                <button type="submit" class="center-button">Show My Profile</button>
+            </form>
+            <a href="@Url.Action("Index", "EmployeeDashboard")" class="center-button">Return to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

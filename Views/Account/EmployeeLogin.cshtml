@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Login</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="form-box">
+        <h1>Employee Login</h1>
+        <form method="post" action="@Url.Action("EmployeeLogin", "Account")">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button class="login-button">Login</button>
+        </form>
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
+</body>
+</html>

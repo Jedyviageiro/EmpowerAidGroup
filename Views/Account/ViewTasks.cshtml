@@ -1,0 +1,75 @@
+﻿@model List<empoweraidgroup.Models.Task>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Tasks</title>
+    <link rel="stylesheet" href="~/css/viewTasks.css">
+</head>
+<body>
+    <div class="banner">
+        <h1>Task Management</h1>
+        <div class="content">
+            <h2>Your Assigned Tasks</h2>
+
+            @if (Model != null && Model.Count > 0)
+            {
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Description</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Assigned At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var task in Model)
+                        {
+                            <tr>
+                                <td>@task.TaskDescription</td>
+                                <td>@task.DueDate.ToShortDateString()</td>
+                                <td>@task.Status</td>
+                                <td>@task.AssignedAt.ToShortDateString()</td>
+                                <td>
+                                    @if (task.Status == "Pending")
+                                    {
+                                        <form asp-action="CompleteTask" asp-controller="EmployeeDashboard" method="post">
+                                            <input type="hidden" name="task_id" value="@task.Id" />
+                                            <button type="submit">Mark as Complete</button>
+                                        </form>
+                                    }
+                                    else if (task.Status == "Awaiting Approval")
+                                    {
+                                        <span>Awaiting Admin Approval</span>
+                                    }
+                                    else if (task.Status == "Completed")
+                                    {
+                                        <span>Task Completed</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No tasks assigned. Click the button to retrieve your tasks.</p>
+            }
+
+            <div class="button-container">
+                <form asp-action="ViewTasks" asp-controller="EmployeeDashboard" method="get">
+                    <button type="submit" class="center-button">Show My Tasks</button>
+                </form>
+                <a href="@Url.Action("Index", "EmployeeDashboard")" class="center-button">Return to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

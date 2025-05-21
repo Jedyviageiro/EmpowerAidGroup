@@ -1,0 +1,120 @@
+﻿/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2; /* Light grey background for a soft look */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background-color: white;
+    padding: 30px; /* Increased padding for a spacious feel */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    margin: 0 auto;
+    width: 90%; /* Consistent width */
+    max-width: 600px; /* Max width for larger screens */
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 20px; /* Adjusted bottom margin */
+    color: #3c00a0; /* Consistent heading color */
+    font-size: 30px; /* Increased font size for emphasis */
+    text-align: center; /* Centered for better appearance */
+}
+
+h3 {
+    margin-top: 20px; /* Space above employee details */
+    color: #3c00a0; /* Heading color */
+}
+
+/* Messages */
+.success {
+    background-color: #d4edda; /* Light green background for success messages */
+    color: #155724; /* Dark green text */
+    padding: 10px;
+    margin: 20px 0; /* Spacing above and below */
+    border: 1px solid #c3e6cb; /* Border for success alert */
+
+    text-align: center; /* Centered text */
+}
+
+.error {
+    background-color: #f8d7da; /* Light red background for error messages */
+    color: #721c24; /* Dark red text */
+    padding: 10px;
+    margin: 20px 0; /* Spacing above and below */
+    border: 1px solid #f5c6cb; /* Border for error alert */
+
+    text-align: center; /* Centered text */
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px; /* Space between forms */
+}
+
+label {
+    font-weight: bold;
+    display: block; /* Ensures label takes the full width */
+    margin-bottom: 5px; /* Space below the label */
+}
+
+input[type="number"] {
+    padding: 10px; /* Comfortable padding */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    box-sizing: border-box; /* Includes padding and border in the width */
+}
+
+/* Buttons */
+button {
+    width: 100%; /* Full width button */
+    background-color: #3c00a0; /* Button color */
+    color: white;
+    padding: 12px; /* Increased padding for comfort */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Space above buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+    button:hover {
+        background-color: #5a0aa0; /* Darker shade for hover effect */
+    }
+
+/* Employee Details */
+.employee-details {
+    border: 1px solid #ccc; /* Border around employee details */
+    padding: 15px; /* Inner padding */
+
+    background-color: #f9f9f9; /* Light background for contrast */
+    margin-top: 20px; /* Space above employee details */
+}
+
+/* Confirm Dialog */
+button[onclick] {
+    background-color: #ff6347; /* Red background for remove button */
+}
+
+    button[onclick]:hover {
+        background-color: #ff4500; /* Darker red on hover */
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Slightly wider on smaller screens */
+    }
+
+    h2 {
+        font-size: 26px; /* Slightly smaller heading on mobile */
+    }
+
+    button {
+        font-size: 14px; /* Smaller button text on mobile */
+    }
+}

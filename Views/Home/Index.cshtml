@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmpowerAid Group - Welcome</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-box">
+        <h1>Welcome to EmpowerAid Group</h1>
+        <p>Helping the community with care and compassion</p>
+
+        <div class="btn-field">
+            <a href="@Url.Action("AdminLogin", "Account")">
+                <button class="login-button">Admin Login</button>
+            </a>
+            <a href="@Url.Action("EmployeeLogin", "Account")">
+                <button class="login-button">Employee Login</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

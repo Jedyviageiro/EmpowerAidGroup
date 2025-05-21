@@ -1,0 +1,47 @@
+﻿@model empoweraidgroup.Models.Task
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/assignTasks.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Added container div -->
+        <h2>Assign Task to Employee</h2>
+
+        <!-- Display success or error message -->
+        @if (ViewBag.TaskAssigned != null)
+        {
+            <div class="success">Task assigned successfully!</div>
+        }
+        else if (ViewBag.Error != null)
+        {
+            <div class="error">@ViewBag.Error</div>
+        }
+
+        @using (Html.BeginForm("AssignTask", "AssignTask", FormMethod.Post))
+        {
+            <label for="employee_id">Employee ID:</label>
+            @Html.TextBoxFor(model => model.EmployeeId, new { id = "employee_id", required = "required" })
+
+            <label for="username">Username:</label>
+            @Html.TextBoxFor(model => model.Username, new { id = "username", required = "required" })
+
+            <label for="task_description">Task Description:</label>
+            @Html.TextAreaFor(model => model.TaskDescription, new { id = "task_description", required = "required" })
+
+            <label for="due_date">Due Date:</label>
+            @Html.TextBoxFor(model => model.DueDate, new { type = "date", id = "due_date", required = "required" })
+
+            <button type="submit">Assign Task</button>
+        }
+    </div> <!-- End of container div -->
+</body>
+</html>
