@@ -1,2 +1,7 @@
-##How to run the system
-''' Simply clone the repository and run on whatever IDE your using, but i'd suggest using Visual Studio 2022 
+## 🚀 How to Run the System
+
+1. **Clone the Repository**  
+   Open your terminal and run:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+
